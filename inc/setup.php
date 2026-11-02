@@ -59,7 +59,7 @@ add_action(
 add_action(
 	'wp_head',
 	function () {
-		echo '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><meta name="theme-color" content="#E70E1B">' . "\n";
+		echo '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><meta name="theme-color" content="#E4323C">' . "\n";
 		if ( ! has_site_icon() ) {
 			echo '<link rel="icon" href="' . esc_url( JW_URI . '/assets/img/icon.png' ) . '">' . "\n";
 		}

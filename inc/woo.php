@@ -76,6 +76,17 @@ add_filter(
 	3
 );
 
+/* After a normal (page-reload) add to cart, tell the next page to open the side cart. */
+add_action(
+	'woocommerce_add_to_cart',
+	function () {
+		if ( wp_doing_ajax() || is_admin() || ! empty( $_REQUEST['jw_buy_now'] ) || ! get_theme_mod( 'jw_side_cart', 1 ) || headers_sent() ) { // phpcs:ignore
+			return;
+		}
+		setcookie( 'jw_open_cart', '1', time() + 120, COOKIEPATH ?: '/', COOKIE_DOMAIN, is_ssl(), false );
+	}
+);
+
 /* Header cart count and side-cart content refresh after AJAX add to cart. */
 add_filter(
 	'woocommerce_add_to_cart_fragments',
@@ -96,7 +107,7 @@ add_action(
 		$total = (float) WC()->cart->get_displayed_subtotal();
 		$left  = max( 0, $min - $total );
 		$pct   = min( 100, $total / $min * 100 );
-		echo '<div class="jw-ship-bar"><p>' . ( $left > 0 ? sprintf( /* translators: %s: amount */ esc_html__( 'Add %s more for free shipping', 'jwstore' ), wp_kses_post( wc_price( $left ) ) ) : esc_html__( 'You get free shipping!', 'jwstore' ) ) . '</p><span><i style="width:' . esc_attr( $pct ) . '%"></i></span></div>';
+		echo '<div class="jw-ship-bar"><p>' . ( $left > 0 ? sprintf( /* translators: %s: amount */ esc_html__( 'Add %s more for free shipping', 'jwstore' ), wc_price( $left ) ) : esc_html__( 'You get free shipping!', 'jwstore' ) ) . '</p><span><i style="width:' . esc_attr( $pct ) . '%"></i></span></div>';
 	}
 );
 

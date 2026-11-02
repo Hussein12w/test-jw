@@ -109,6 +109,9 @@ msgstr "كيف نعمل"
 msgid "Installation service available"
 msgstr "خدمة التركيب متوفرة"
 
+msgid "Jimny products"
+msgstr "منتجات جيمني"
+
 msgid "Link copied"
 msgstr "تم نسخ الرابط"
 

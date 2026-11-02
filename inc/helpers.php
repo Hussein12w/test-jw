@@ -20,7 +20,7 @@ function jw_cart_count() {
 	return '<span class="jw-cart-count' . ( $n ? '' : ' is-empty' ) . '">' . (int) $n . '</span>';
 }
 
-/** Product IDs for home sections. $type: latest | featured | sale | best | cat:<slug> */
+/** Product IDs for home sections. $type: latest | featured | sale | best | cat:<slug> | cats:<slug,slug> */
 function jw_products( $type, $limit = 8 ) {
 	if ( ! function_exists( 'wc_get_products' ) ) {
 		return array();
@@ -40,6 +40,8 @@ function jw_products( $type, $limit = 8 ) {
 	} elseif ( 'best' === $type ) {
 		$args['orderby']  = 'meta_value_num';
 		$args['meta_key'] = 'total_sales'; // phpcs:ignore
+	} elseif ( 0 === strpos( $type, 'cats:' ) ) {
+		$args['category'] = array_filter( explode( ',', substr( $type, 5 ) ) );
 	} elseif ( 0 === strpos( $type, 'cat:' ) ) {
 		$args['category'] = array( substr( $type, 4 ) );
 	}

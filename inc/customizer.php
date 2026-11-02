@@ -64,7 +64,9 @@ add_action(
 		for ( $i = 1; $i <= 4; $i++ ) {
 			$both( "jw_feat{$i}", "ميزة {$i}", 'jw_home' );
 		}
-		$txt( 'jw_home_featured', 'إظهار «منتجات مميزة»', 'jw_home', 'checkbox', 1 );
+		$txt( 'jw_home_first', 'القسم الأول في الرئيسية — كلمة من اسم الفئة (مثلاً jimny تجمع كل فئات جيمني). فارغ = بدون', 'jw_home', 'text', 'jimny' );
+		$both( 'jw_home_first_title', 'القسم الأول — العنوان', 'jw_home', 'text', 'منتجات جيمني', 'Jimny products' );
+		$txt( 'jw_home_featured', 'إظهار «منتجات مميزة»', 'jw_home', 'checkbox', 0 );
 		$txt( 'jw_home_new', 'إظهار «وصل حديثاً»', 'jw_home', 'checkbox', 1 );
 		$txt( 'jw_home_sale', 'إظهار «العروض»', 'jw_home', 'checkbox', 1 );
 		$txt( 'jw_home_best', 'إظهار «الأكثر مبيعاً»', 'jw_home', 'checkbox', 0 );

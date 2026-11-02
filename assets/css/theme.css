@@ -1,10 +1,10 @@
 /* ==========================================================================
    JW Store — theme styles
-   Brand: red #E70E1B · black #000 · white #FFF · light gray #F5F5F5
+   Brand: red #E4323C (softened from #E70E1B) · black #000 · white #FFF · light gray #F5F5F5
    Arabic: Noto Kufi Arabic (RTL) · English: Inter (LTR)
    ========================================================================== */
 :root{
-  --red:#E70E1B; --red-d:#C20914; --red-soft:#FDECEC;
+  --red:#E4323C; --red-d:#C8262F; --red-soft:#FDEEEF;
   --black:#000; --ink:#111; --ink2:#2A2A2A; --mut:#6B6B6B;
   --white:#fff; --gray:#F5F5F5; --gray2:#EBEBEB; --line:#E4E4E4;
   --ok:#14A44D; --wa:#25D366;
@@ -58,7 +58,7 @@ input[type=text],input[type=email],input[type=tel],input[type=password],input[ty
 .woocommerce form .form-row input.input-text,.woocommerce form .form-row textarea,.select2-container .select2-selection--single{
   width:100%;min-height:48px;padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:15px;outline:none;transition:border-color .15s,box-shadow .15s}
 textarea{min-height:110px}
-input:focus,select:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(231,14,27,.12)}
+input:focus,select:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(228,50,60,.12)}
 .select2-container .select2-selection--single{display:flex;align-items:center;height:48px}
 .select2-container--default .select2-selection--single .select2-selection__arrow{height:46px}
 label{font-weight:700;font-size:14px}
@@ -141,7 +141,7 @@ label{font-weight:700;font-size:14px}
 .jw-slide.on{opacity:1;visibility:visible}
 .jw-slide::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,0) 75%)}
 .jw-rtl .jw-slide::before{background:linear-gradient(270deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,0) 75%)}
-.jw-slide.no-img{background:radial-gradient(700px 400px at 85% 50%,rgba(231,14,27,.55),transparent 60%),radial-gradient(500px 300px at 10% 110%,rgba(231,14,27,.35),transparent 60%),#0A0A0A}
+.jw-slide.no-img{background:radial-gradient(700px 400px at 85% 50%,rgba(228,50,60,.55),transparent 60%),radial-gradient(500px 300px at 10% 110%,rgba(228,50,60,.35),transparent 60%),#0A0A0A}
 .jw-slide.no-img::before{display:none}
 .jw-slide-txt{position:relative;z-index:1;color:#fff;padding:0 56px;max-width:640px}
 .jw-slide h1{font-size:46px;font-weight:900;line-height:1.15;margin:0 0 12px;letter-spacing:-.5px}
@@ -202,7 +202,7 @@ ul.products li.product,.jw-card{width:auto!important;margin:0!important;float:no
 .jw-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
 .jw-card:hover .jw-card-img img{transform:scale(1.05)}
 .jw-card-badges{position:absolute;top:10px;inset-inline-start:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
-.jw-card-badges .onsale,.jw-badge-sale{direction:ltr;unicode-bidi:isolate;position:static!important;min-width:0!important;min-height:0!important;margin:0!important;padding:3px 9px!important;border-radius:8px!important;background:var(--red)!important;color:#fff!important;font-size:12.5px!important;font-weight:800!important;line-height:1.5!important;font-family:'Inter',sans-serif}
+.jw-card-badges .onsale{direction:ltr;unicode-bidi:isolate;position:static!important;min-width:0!important;min-height:0!important;margin:0!important;padding:3px 9px!important;border-radius:8px!important;background:var(--red)!important;color:#fff!important;font-size:12.5px!important;font-weight:800!important;line-height:1.5!important;font-family:'Inter',sans-serif}
 .jw-badge-oos{padding:3px 9px;border-radius:8px;background:var(--black);color:#fff;font-size:12px;font-weight:700}
 .jw-badge-feat{width:28px;height:28px;border-radius:8px;background:#FFC93C;color:#000;display:grid;place-items:center}
 .jw-wish{position:absolute;top:10px;inset-inline-end:10px;width:38px;height:38px;border-radius:50%;border:0;background:#fff;color:var(--ink);display:grid;place-items:center;box-shadow:0 3px 10px rgba(0,0,0,.12);transition:color .15s,transform .15s}
@@ -281,7 +281,6 @@ ul.products li.product,.jw-card{width:auto!important;margin:0!important;float:no
 .woocommerce-product-gallery .flex-control-thumbs img{border-radius:12px;border:2px solid transparent;opacity:.7;cursor:pointer}
 .woocommerce-product-gallery .flex-control-thumbs img.flex-active,.woocommerce-product-gallery .flex-control-thumbs img:hover{border-color:var(--red);opacity:1}
 .woocommerce-product-gallery__trigger{inset-inline-end:14px!important;inset-inline-start:auto!important;top:14px!important;background:#fff;border-radius:50%!important}
-.single-product .onsale{top:14px!important;inset-inline-start:14px!important;inset-inline-end:auto!important;z-index:5}
 .product_title{font-size:28px!important;font-weight:900;line-height:1.35;margin:0 0 8px!important}
 .summary .woocommerce-product-rating{display:flex;align-items:center;gap:10px;margin-bottom:10px!important}
 .star-rating{color:#F5A623}
@@ -583,9 +582,6 @@ form.checkout #order_review{grid-column:2;grid-row:1;margin-top:58px;background:
 /* ---------- Overrides of WooCommerce default styles ---------- */
 .jw-card .price,ul.products li.product.jw-card .price{display:flex!important;flex-direction:column;color:var(--ink)!important;font-size:17px}
 .single-product div.product{position:relative}
-.single-product div.product>.onsale{position:absolute!important;top:14px!important;inset-inline-start:14px!important;inset-inline-end:auto!important;left:auto;right:auto;width:auto!important;z-index:9}
-.jw-ltr.single-product div.product>.onsale{left:14px!important}
-.jw-rtl.single-product div.product>.onsale{right:14px!important}
 .summary form.cart button.jw-buy-now,.summary button.button.jw-buy-now{background:#fff!important;color:var(--red)!important;border:2px solid var(--red)!important}
 .summary form.cart button.jw-buy-now:hover{background:var(--red)!important;color:#fff!important}
 @media (max-width:900px){
@@ -640,3 +636,42 @@ ul.products,.jw-grid,ul.products[class*=columns-]{grid-template-columns:repeat(5
   .jw-card-badges{top:6px;inset-inline-start:6px}
 }
 .summary [id*=tabby],.summary [class*=tabby],.summary [id*=tamara],.summary [class*=tamara]{min-width:0!important;overflow-wrap:anywhere}
+
+/* Sale badge on the product page: sits on the gallery corner, never takes a grid cell */
+.single-product div.product>span.onsale{position:absolute!important;top:14px!important;bottom:auto!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;margin:0!important;padding:4px 11px!important;border-radius:9px!important;line-height:1.5!important;font-size:14px!important;font-weight:800!important;background:var(--red)!important;color:#fff!important;z-index:9;direction:ltr;unicode-bidi:isolate}
+.jw-ltr.single-product div.product>span.onsale{left:14px!important;right:auto!important}
+.jw-rtl.single-product div.product>span.onsale{right:14px!important;left:auto!important}
+
+/* Instalment widgets (Tabby, Tamara) anywhere: never wider than their box */
+[id*=tabby],[class*=tabby],[id*=tamara],[class*=tamara]{min-width:0!important;max-width:100%!important;box-sizing:border-box;overflow-wrap:anywhere}
+.woocommerce-cart-form,.cart-collaterals,.cart_totals,.woocommerce-cart .jw-content,.woocommerce-checkout .jw-content{min-width:0;max-width:100%}
+@media (max-width:900px){
+  .woocommerce table.shop_table_responsive{width:100%!important;table-layout:fixed}
+  .woocommerce table.shop_table_responsive tbody{display:block;width:100%}
+  .woocommerce table.shop_table_responsive tr td{min-width:0;overflow-wrap:anywhere}
+  .woocommerce-cart-form .product-name{gap:10px}
+  .woocommerce-cart-form .product-name a{text-align:end}
+  .woocommerce-cart-form .actions .coupon{display:flex;flex-wrap:wrap;gap:8px}
+  .woocommerce-cart-form .actions .coupon input{width:100%!important;min-width:0}
+  .woocommerce-cart-form .actions>.button{width:100%}
+}
+.single_add_to_cart_button.loading{opacity:.7;pointer-events:none}
+
+/* Shop by category: swipe slider on phones */
+@media (max-width:900px){
+  .jw-cats{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -14px;padding:2px 14px 8px;scroll-padding-inline:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .jw-cats::-webkit-scrollbar{display:none}
+  .jw-cat{flex:0 0 30%;scroll-snap-align:start}
+  .jw-cat:hover{transform:none}
+}
+
+/* Hero: Jimny illustration when a slide has no photo */
+.jw-hero-car{position:absolute;inset-inline-end:2%;bottom:4%;width:min(54%,640px);height:auto;filter:drop-shadow(0 24px 30px rgba(0,0,0,.45));pointer-events:none}
+.jw-slide.no-img .jw-slide-txt{max-width:560px}
+@media (max-width:900px){
+  .jw-hero{height:440px}
+  .jw-slide.no-img{align-items:flex-start}
+  .jw-slide.no-img .jw-slide-txt{padding-top:30px}
+  .jw-hero-car{width:88%;inset-inline-end:6%;bottom:8%}
+  .jw-dots{bottom:12px}
+}

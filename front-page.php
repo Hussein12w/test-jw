@@ -23,7 +23,7 @@ for ( $i = 1; $i <= 3; $i++ ) {
 				<div class="jw-hero-btns"><a class="jw-btn" href="<?php echo esc_url( $s['link'] ); ?>"><?php esc_html_e( 'Shop now', 'jwstore' ); ?> <?php echo jw_ic( 'arrow', 'flip' ); ?></a>
 				<?php if ( 0 === $i && $woo ) : ?><a class="jw-btn jw-btn-ghost" href="#jwCats"><?php esc_html_e( 'Browse categories', 'jwstore' ); ?></a><?php endif; ?></div>
 			</div>
-			<?php if ( ! $s['img'] ) : ?><img class="jw-hero-mark" src="<?php echo esc_url( JW_URI . '/assets/img/logo-white.png' ); ?>" alt=""><?php endif; ?>
+			<?php if ( ! $s['img'] ) : ?><img class="jw-hero-car" src="<?php echo esc_url( JW_URI . '/assets/img/hero-jimny.webp' ); ?>" alt="" width="1200" height="675" <?php echo 0 === $i ? 'fetchpriority="high"' : 'loading="lazy"'; ?>><?php endif; ?>
 		</div>
 		<?php endforeach; ?>
 		<?php if ( count( $slides ) > 1 ) : ?><div class="jw-dots"><?php foreach ( $slides as $i => $s ) { echo '<button class="' . ( 0 === $i ? 'on' : '' ) . '" data-i="' . (int) $i . '" aria-label="' . esc_attr( $i + 1 ) . '"></button>'; } ?></div><?php endif; ?>
@@ -41,17 +41,27 @@ for ( $i = 1; $i <= 3; $i++ ) {
 </section>
 	<?php endif; ?>
 
-	<?php if ( get_theme_mod( 'jw_home_featured', 1 ) && ( $ids = jw_products( 'featured', $count ) ) ) : ?>
-<section class="jw-wrap jw-sec"><?php echo jw_sec_head( __( 'Featured products', 'jwstore' ), wc_get_page_permalink( 'shop' ) ) . jw_product_grid( $ids ); // phpcs:ignore ?></section>
+	<?php
+	/* 1) Jimny first: every category whose name or slug contains the keyword (Customizer → Home sections). */
+	$first_kw    = trim( (string) get_theme_mod( 'jw_home_first', 'jimny' ) );
+	$first_terms = array();
+	if ( $first_kw ) {
+		$all = get_terms( array( 'taxonomy' => 'product_cat', 'hide_empty' => true ) );
+		foreach ( is_wp_error( $all ) ? array() : $all as $t ) {
+			if ( false !== stripos( $t->slug, $first_kw ) || false !== stripos( $t->name, $first_kw ) ) {
+				$first_terms[] = $t;
+			}
+		}
+	}
+	if ( $first_terms && ( $ids = jw_products( 'cats:' . implode( ',', wp_list_pluck( $first_terms, 'slug' ) ), $count ) ) ) :
+		$tops = array_values( array_filter( $first_terms, fn( $t ) => 0 === (int) $t->parent ) );
+		$link = get_term_link( $tops ? $tops[0] : $first_terms[0] );
+		?>
+<section class="jw-wrap jw-sec"><?php echo jw_sec_head( jw_mod( 'jw_home_first_title', __( 'Jimny products', 'jwstore' ) ), is_wp_error( $link ) ? '' : $link ) . jw_product_grid( $ids ); // phpcs:ignore ?></section>
 	<?php endif; ?>
 
-	<?php if ( get_theme_mod( 'jw_home_sale', 1 ) && ( $sale = jw_products( 'sale', $count ) ) ) : ?>
-<section class="jw-wrap jw-sec">
-	<a class="jw-offer" href="<?php echo esc_url( get_theme_mod( 'jw_offer_link' ) ?: jw_offers_url() ); ?>"<?php echo ( $oi = get_theme_mod( 'jw_offer_img' ) ) ? ' style="--bg:url(\'' . esc_url( $oi ) . '\')"' : ''; ?>>
-		<div><h2><?php echo esc_html( jw_mod( 'jw_offer_title', __( 'Special offers', 'jwstore' ) ) ); ?></h2><p><?php echo esc_html( jw_mod( 'jw_offer_sub', __( 'Discounts on top accessories for a limited time', 'jwstore' ) ) ); ?></p><span class="jw-btn jw-btn-white"><?php esc_html_e( 'Shop the sale', 'jwstore' ); ?> <?php echo jw_ic( 'arrow', 'flip' ); ?></span></div>
-	</a>
-	<?php echo jw_product_grid( $sale ); // phpcs:ignore ?>
-</section>
+	<?php if ( get_theme_mod( 'jw_home_featured', 0 ) && ( $ids = jw_products( 'featured', $count ) ) ) : ?>
+<section class="jw-wrap jw-sec"><?php echo jw_sec_head( __( 'Featured products', 'jwstore' ), wc_get_page_permalink( 'shop' ) ) . jw_product_grid( $ids ); // phpcs:ignore ?></section>
 	<?php endif; ?>
 
 	<?php if ( get_theme_mod( 'jw_home_new', 1 ) && ( $ids = jw_products( 'latest', $count ) ) ) : ?>
@@ -61,7 +71,11 @@ for ( $i = 1; $i <= 3; $i++ ) {
 	<?php
 	$slugs = array_filter( array_map( 'trim', explode( ',', (string) get_theme_mod( 'jw_home_cats', '' ) ) ) );
 	$list  = $slugs ? array_filter( array_map( fn( $s ) => get_term_by( 'slug', $s, 'product_cat' ), $slugs ) ) : $cats;
+	$skip  = wp_list_pluck( $first_terms, 'term_id' );
 	foreach ( $list as $c ) :
+		if ( in_array( $c->term_id, $skip, true ) ) {
+			continue;
+		}
 		$ids = jw_products( 'cat:' . $c->slug, $count );
 		if ( ! $ids ) {
 			continue;
@@ -69,6 +83,15 @@ for ( $i = 1; $i <= 3; $i++ ) {
 		?>
 <section class="jw-wrap jw-sec"><?php echo jw_sec_head( $c->name, get_term_link( $c ) ) . jw_product_grid( $ids ); // phpcs:ignore ?></section>
 	<?php endforeach; ?>
+
+	<?php if ( get_theme_mod( 'jw_home_sale', 1 ) && ( $sale = jw_products( 'sale', $count ) ) ) : ?>
+<section class="jw-wrap jw-sec">
+	<a class="jw-offer" href="<?php echo esc_url( get_theme_mod( 'jw_offer_link' ) ?: jw_offers_url() ); ?>"<?php echo ( $oi = get_theme_mod( 'jw_offer_img' ) ) ? ' style="--bg:url(\'' . esc_url( $oi ) . '\')"' : ''; ?>>
+		<div><h2><?php echo esc_html( jw_mod( 'jw_offer_title', __( 'Special offers', 'jwstore' ) ) ); ?></h2><p><?php echo esc_html( jw_mod( 'jw_offer_sub', __( 'Discounts on top accessories for a limited time', 'jwstore' ) ) ); ?></p><span class="jw-btn jw-btn-white"><?php esc_html_e( 'Shop the sale', 'jwstore' ); ?> <?php echo jw_ic( 'arrow', 'flip' ); ?></span></div>
+	</a>
+	<?php echo jw_product_grid( $sale ); // phpcs:ignore ?>
+</section>
+	<?php endif; ?>
 
 	<?php if ( get_theme_mod( 'jw_home_best', 0 ) && ( $ids = jw_products( 'best', $count ) ) ) : ?>
 <section class="jw-wrap jw-sec"><?php echo jw_sec_head( __( 'Best sellers', 'jwstore' ) ) . jw_product_grid( $ids ); // phpcs:ignore ?></section>

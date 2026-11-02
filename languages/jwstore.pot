@@ -108,6 +108,9 @@ msgstr ""
 msgid "Installation service available"
 msgstr ""
 
+msgid "Jimny products"
+msgstr ""
+
 msgid "Link copied"
 msgstr ""
 

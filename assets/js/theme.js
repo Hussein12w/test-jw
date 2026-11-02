@@ -99,9 +99,54 @@
   var hdr = $('#jwHeader');
   window.addEventListener('scroll', function () { if (hdr) hdr.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
 
+  /* Side cart after adding a product.
+     1) Product page: the form is sent in the background, then the side cart opens (no page reload).
+        "Buy now" and forms that return an error are submitted normally.
+     2) Any other add-to-cart that reloads the page (e.g. AJAX buttons turned off): the server sets
+        the jw_open_cart cookie and the side cart opens on the next page. */
+  function getCookie(n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? m[1] : null; }
+  function dropCookie(n) { document.cookie = n + '=;path=/;max-age=0;samesite=lax'; }
+  function openSideCart() {
+    if (!C.sideCart || !$('#jwCart') || document.body.classList.contains('woocommerce-cart') || document.body.classList.contains('woocommerce-checkout')) return;
+    drawer('jwCart', true);
+  }
+  if (getCookie('jw_open_cart')) { dropCookie('jw_open_cart'); openSideCart(); }
+  /* Remove ?add-to-cart= from the address so refreshing the page does not add the product again */
+  if (/[?&]add-to-cart=/.test(location.search) && window.history && history.replaceState) {
+    var q = location.search.replace(/([?&])(add-to-cart|quantity)=[^&]*&?/g, '$1').replace(/[?&]$/, '');
+    history.replaceState(null, '', location.pathname + q + location.hash);
+  }
+  function refreshThenOpen() {
+    var done = false, go = function () { if (!done) { done = true; openSideCart(); } };
+    if (window.jQuery) { window.jQuery(document.body).one('wc_fragments_refreshed wc_fragments_loaded', go).trigger('wc_fragment_refresh'); }
+    setTimeout(go, 2500);
+  }
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (!C.sideCart || !f.matches || !f.matches('form.cart') || f.dataset.jwPlain || !window.fetch || !window.FormData) return;
+    var sub = e.submitter;
+    if (sub && sub.name === 'jw_buy_now') return;
+    if (f.closest('.product-type-external') || f.classList.contains('grouped_form')) return;
+    e.preventDefault();
+    var fd = new FormData(f);
+    if (sub && sub.name && !fd.has(sub.name)) fd.append(sub.name, sub.value);
+    var btn = sub || f.querySelector('.single_add_to_cart_button');
+    if (btn) btn.classList.add('loading');
+    var plain = function () { f.dataset.jwPlain = 1; if (sub && sub.click) sub.click(); else f.submit(); };
+    fetch(f.getAttribute('action') || location.href, { method: 'POST', body: fd, credentials: 'same-origin' })
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        if (btn) btn.classList.remove('loading');
+        if (/class="[^"]*(woocommerce-error|is-error)/.test(html)) { plain(); return; }
+        dropCookie('jw_open_cart');
+        refreshThenOpen();
+      })
+      .catch(function () { if (btn) btn.classList.remove('loading'); plain(); });
+  });
+
   /* WooCommerce events (jQuery): open the side cart after AJAX add-to-cart; re-add quantity buttons after cart updates */
   if (window.jQuery) {
-    window.jQuery(document.body).on('added_to_cart', function () { if (C.sideCart && $('#jwCart')) drawer('jwCart', true); });
+    window.jQuery(document.body).on('added_to_cart', function () { dropCookie('jw_open_cart'); openSideCart(); });
     window.jQuery(document.body).on('updated_cart_totals updated_wc_div wc_fragments_refreshed updated_checkout', function () { qtyButtons(); });
   }
 })();
