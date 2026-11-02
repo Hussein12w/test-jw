@@ -69,7 +69,7 @@ add_action(
 		$txt( 'jw_home_sale', 'إظهار «العروض»', 'jw_home', 'checkbox', 1 );
 		$txt( 'jw_home_best', 'إظهار «الأكثر مبيعاً»', 'jw_home', 'checkbox', 0 );
 		$txt( 'jw_home_cats', 'أقسام الفئات في الرئيسية — روابط الفئات (slug) مفصولة بفواصل. فارغ = كل الفئات الرئيسية', 'jw_home' );
-		$txt( 'jw_home_count', 'عدد المنتجات في كل قسم', 'jw_home', 'number', 8 );
+		$txt( 'jw_home_count', 'عدد المنتجات في كل قسم', 'jw_home', 'number', 10 );
 		$img( 'jw_offer_img', 'بانر العروض — الصورة', 'jw_home' );
 		$both( 'jw_offer_title', 'بانر العروض — العنوان', 'jw_home', 'text', 'عروض خاصة', 'Special offers' );
 		$both( 'jw_offer_sub', 'بانر العروض — النص', 'jw_home', 'text', 'خصومات على أفضل الإكسسوارات لفترة محدودة', 'Discounts on top accessories for a limited time' );

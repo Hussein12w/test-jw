@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 get_header();
 $woo   = class_exists( 'WooCommerce' );
-$count = max( 4, (int) get_theme_mod( 'jw_home_count', 8 ) );
+$count = max( 4, (int) get_theme_mod( 'jw_home_count', 10 ) );
 $slides = array();
 for ( $i = 1; $i <= 3; $i++ ) {
 	$img   = get_theme_mod( "jw_hero{$i}_img" );

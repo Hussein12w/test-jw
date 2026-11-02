@@ -15,7 +15,7 @@ add_action(
 			array(
 				'thumbnail_image_width' => 600,
 				'single_image_width'    => 900,
-				'product_grid'          => array( 'default_columns' => 4, 'default_rows' => 4, 'min_columns' => 2, 'max_columns' => 5 ),
+				'product_grid'          => array( 'default_columns' => 5, 'default_rows' => 4, 'min_columns' => 2, 'max_columns' => 5 ),
 			)
 		);
 		add_theme_support( 'wc-product-gallery-zoom' );

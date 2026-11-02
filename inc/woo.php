@@ -30,7 +30,7 @@ add_filter(
 
 /* Shop grid: products per page and columns (CSS also forces 2 per row on phones). */
 add_filter( 'loop_shop_per_page', fn() => (int) get_theme_mod( 'jw_per_page', 20 ), 20 );
-add_filter( 'loop_shop_columns', fn() => 4 );
+add_filter( 'loop_shop_columns', fn() => 5 );
 
 /* Sale badge with the percentage. */
 add_filter(
@@ -137,7 +137,7 @@ add_action(
 	},
 	45
 );
-add_filter( 'woocommerce_output_related_products_args', fn( $a ) => array_merge( $a, array( 'posts_per_page' => 4, 'columns' => 4 ) ) );
+add_filter( 'woocommerce_output_related_products_args', fn( $a ) => array_merge( $a, array( 'posts_per_page' => 5, 'columns' => 5 ) ) );
 
 /* Four store features (header strip, product page). Text editable in the Customizer. */
 function jw_features() {

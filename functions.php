@@ -4,7 +4,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-define( 'JW_VERSION', '1.0.0' );
+define( 'JW_VERSION', '1.0.1' );
 define( 'JW_DIR', get_template_directory() );
 define( 'JW_URI', get_template_directory_uri() );
 
