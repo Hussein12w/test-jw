@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JW Store\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+msgid "Add %s more for free shipping"
+msgstr ""
+
+msgid "Add to wishlist"
+msgstr ""
+
+msgid "Added to wishlist"
+msgstr ""
+
+msgid "Al Ain, United Arab Emirates"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "All categories"
+msgstr ""
+
+msgid "All products"
+msgstr ""
+
+msgid "All rights reserved"
+msgstr ""
+
+msgid "Ask about this product on WhatsApp"
+msgstr ""
+
+msgid "Back to home"
+msgstr ""
+
+msgid "Best sellers"
+msgstr ""
+
+msgid "Book installation"
+msgstr ""
+
+msgid "Browse by your car and pick the accessory you need."
+msgstr ""
+
+msgid "Browse categories"
+msgstr ""
+
+msgid "Build your ride your way"
+msgstr ""
+
+msgid "Buy now"
+msgstr ""
+
+msgid "Car accessories and parts for Jimny, Jetour, Defender and more — with installation service in Al Ain."
+msgstr ""
+
+msgid "Cart"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Choose your part"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Continue shopping"
+msgstr ""
+
+msgid "Discounts on top accessories for a limited time"
+msgstr ""
+
+msgid "Fast delivery across the UAE & GCC"
+msgstr ""
+
+msgid "Fast delivery across the UAE and GCC."
+msgstr ""
+
+msgid "Featured products"
+msgstr ""
+
+msgid "Footer — Help & policies"
+msgstr ""
+
+msgid "Footer — Shop"
+msgstr ""
+
+msgid "Hello, I am interested in: %s"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "How we work"
+msgstr ""
+
+msgid "Installation service available"
+msgstr ""
+
+msgid "Link copied"
+msgstr ""
+
+msgid "Main menu"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "My account"
+msgstr ""
+
+msgid "New arrivals"
+msgstr ""
+
+msgid "Nothing found."
+msgstr ""
+
+msgid "Offers"
+msgstr ""
+
+msgid "Optional: add a note at checkout to install it at our service center."
+msgstr ""
+
+msgid "Order online"
+msgstr ""
+
+msgid "Out of stock"
+msgstr ""
+
+msgid "Pay by card, Apple Pay, installments or cash on delivery."
+msgstr ""
+
+msgid "Pay in installments with Tabby & Tamara"
+msgstr ""
+
+msgid "Premium accessories for Jimny, Jetour & Defender — with installation service"
+msgstr ""
+
+msgid "Privacy policy"
+msgstr ""
+
+msgid "Receive & enjoy"
+msgstr ""
+
+msgid "Removed from wishlist"
+msgstr ""
+
+msgid "Sale"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Search for products…"
+msgstr ""
+
+msgid "Secure payments & cash on delivery"
+msgstr ""
+
+msgid "Shop"
+msgstr ""
+
+msgid "Shop by category"
+msgstr ""
+
+msgid "Shop filters (below categories)"
+msgstr ""
+
+msgid "Shop now"
+msgstr ""
+
+msgid "Shop the sale"
+msgstr ""
+
+msgid "Skip to content"
+msgstr ""
+
+msgid "Sorry, this page was not found."
+msgstr ""
+
+msgid "Special offers"
+msgstr ""
+
+msgid "Terms & conditions"
+msgstr ""
+
+msgid "Top bar links"
+msgstr ""
+
+msgid "Track order"
+msgstr ""
+
+msgid "View all"
+msgstr ""
+
+msgid "Wishlist"
+msgstr ""
+
+msgid "You get free shipping!"
+msgstr ""
+
+msgid "Your cart"
+msgstr ""
+
+msgid "Your wishlist is empty."
+msgstr ""
+
+msgid "%d product"
+msgid_plural "%d products"
+msgstr[0] ""
+msgstr[1] ""

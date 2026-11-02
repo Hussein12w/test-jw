@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JW Store\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+msgid "Add %s more for free shipping"
+msgstr "أضف %s للحصول على شحن مجاني"
+
+msgid "Add to wishlist"
+msgstr "أضف إلى المفضلة"
+
+msgid "Added to wishlist"
+msgstr "أضيف إلى المفضلة"
+
+msgid "Al Ain, United Arab Emirates"
+msgstr "العين، الإمارات العربية المتحدة"
+
+msgid "All"
+msgstr "الكل"
+
+msgid "All categories"
+msgstr "جميع الأقسام"
+
+msgid "All products"
+msgstr "جميع المنتجات"
+
+msgid "All rights reserved"
+msgstr "جميع الحقوق محفوظة"
+
+msgid "Ask about this product on WhatsApp"
+msgstr "استفسر عن المنتج عبر واتساب"
+
+msgid "Back to home"
+msgstr "العودة للرئيسية"
+
+msgid "Best sellers"
+msgstr "الأكثر مبيعاً"
+
+msgid "Book installation"
+msgstr "احجز التركيب"
+
+msgid "Browse by your car and pick the accessory you need."
+msgstr "تصفح حسب سيارتك واختر الإكسسوار المناسب."
+
+msgid "Browse categories"
+msgstr "تصفح الأقسام"
+
+msgid "Build your ride your way"
+msgstr "جهّز سيارتك على طريقتك"
+
+msgid "Buy now"
+msgstr "اشترِ الآن"
+
+msgid "Car accessories and parts for Jimny, Jetour, Defender and more — with installation service in Al Ain."
+msgstr "إكسسوارات وقطع لسيارات جيمني وجيتور وديفندر وغيرها — مع خدمة التركيب في العين."
+
+msgid "Cart"
+msgstr "السلة"
+
+msgid "Categories"
+msgstr "الأقسام"
+
+msgid "Category"
+msgstr "القسم"
+
+msgid "Choose your part"
+msgstr "اختر القطعة"
+
+msgid "Contact us"
+msgstr "تواصل معنا"
+
+msgid "Continue shopping"
+msgstr "متابعة التسوق"
+
+msgid "Discounts on top accessories for a limited time"
+msgstr "خصومات على أفضل الإكسسوارات لفترة محدودة"
+
+msgid "Fast delivery across the UAE & GCC"
+msgstr "توصيل سريع داخل الإمارات والخليج"
+
+msgid "Fast delivery across the UAE and GCC."
+msgstr "توصيل سريع داخل الإمارات ودول الخليج."
+
+msgid "Featured products"
+msgstr "منتجات مميزة"
+
+msgid "Footer — Help & policies"
+msgstr "التذييل — المساعدة والسياسات"
+
+msgid "Footer — Shop"
+msgstr "التذييل — المتجر"
+
+msgid "Hello, I am interested in: %s"
+msgstr "مرحباً، أنا مهتم بـ: %s"
+
+msgid "Help"
+msgstr "المساعدة"
+
+msgid "Home"
+msgstr "الرئيسية"
+
+msgid "How we work"
+msgstr "كيف نعمل"
+
+msgid "Installation service available"
+msgstr "خدمة التركيب متوفرة"
+
+msgid "Link copied"
+msgstr "تم نسخ الرابط"
+
+msgid "Main menu"
+msgstr "القائمة الرئيسية"
+
+msgid "Menu"
+msgstr "القائمة"
+
+msgid "My account"
+msgstr "حسابي"
+
+msgid "New arrivals"
+msgstr "وصل حديثاً"
+
+msgid "Nothing found."
+msgstr "لا توجد نتائج."
+
+msgid "Offers"
+msgstr "العروض"
+
+msgid "Optional: add a note at checkout to install it at our service center."
+msgstr "اختياري: أضف ملاحظة عند الدفع لتركيبها في مركز الخدمة."
+
+msgid "Order online"
+msgstr "اطلب أونلاين"
+
+msgid "Out of stock"
+msgstr "نفد المخزون"
+
+msgid "Pay by card, Apple Pay, installments or cash on delivery."
+msgstr "ادفع بالبطاقة أو Apple Pay أو بالتقسيط أو عند الاستلام."
+
+msgid "Pay in installments with Tabby & Tamara"
+msgstr "قسّط مشترياتك مع تابي وتمارا"
+
+msgid "Premium accessories for Jimny, Jetour & Defender — with installation service"
+msgstr "إكسسوارات فاخرة لجيمني وجيتور وديفندر — مع خدمة التركيب"
+
+msgid "Privacy policy"
+msgstr "سياسة الخصوصية"
+
+msgid "Receive & enjoy"
+msgstr "استلم واستمتع"
+
+msgid "Removed from wishlist"
+msgstr "أزيل من المفضلة"
+
+msgid "Sale"
+msgstr "تخفيض"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search for products…"
+msgstr "ابحث عن المنتجات…"
+
+msgid "Secure payments & cash on delivery"
+msgstr "دفع آمن والدفع عند الاستلام"
+
+msgid "Shop"
+msgstr "المتجر"
+
+msgid "Shop by category"
+msgstr "تسوق حسب القسم"
+
+msgid "Shop filters (below categories)"
+msgstr "فلاتر المتجر (أسفل الأقسام)"
+
+msgid "Shop now"
+msgstr "تسوق الآن"
+
+msgid "Shop the sale"
+msgstr "تسوق العروض"
+
+msgid "Skip to content"
+msgstr "انتقل إلى المحتوى"
+
+msgid "Sorry, this page was not found."
+msgstr "عذراً، الصفحة غير موجودة."
+
+msgid "Special offers"
+msgstr "عروض خاصة"
+
+msgid "Terms & conditions"
+msgstr "الشروط والأحكام"
+
+msgid "Top bar links"
+msgstr "روابط الشريط العلوي"
+
+msgid "Track order"
+msgstr "تتبع الطلب"
+
+msgid "View all"
+msgstr "عرض الكل"
+
+msgid "Wishlist"
+msgstr "المفضلة"
+
+msgid "You get free shipping!"
+msgstr "حصلت على شحن مجاني!"
+
+msgid "Your cart"
+msgstr "سلة التسوق"
+
+msgid "Your wishlist is empty."
+msgstr "قائمة المفضلة فارغة."
+
+msgid "%d product"
+msgid_plural "%d products"
+msgstr[0] "%d منتجات"
+msgstr[1] "%d منتج"
+msgstr[2] "%d منتجان"
+msgstr[3] "%d منتجات"
+msgstr[4] "%d منتجاً"
+msgstr[5] "%d منتج"
